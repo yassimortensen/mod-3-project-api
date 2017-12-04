@@ -1,0 +1,2 @@
+class StoryStage < ApplicationRecord
+end

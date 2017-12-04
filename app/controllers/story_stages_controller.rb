@@ -1,0 +1,2 @@
+class StoryStagesController < ApplicationController
+end
