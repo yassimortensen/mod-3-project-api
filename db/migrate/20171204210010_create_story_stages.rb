@@ -1,10 +1,10 @@
 class CreateStoryStages < ActiveRecord::Migration[5.1]
   def change
     create_table :story_stages do |t|
-      t.integer :stage
-      t.text :body
+      t.string :stage
+      t.string :body
       t.string :button
-      t.integer :nextStep
+      t.string :nextStep
       t.string :description
       t.integer :pic_id
 
