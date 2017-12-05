@@ -15,17 +15,38 @@ div = doc.css('div[style="padding-bottom:1200px;"]')
 div.each do |tag|
   tag.css('a[href]').each do |href|
     href.each do
-      stage = tag.children[2].attributes["id"].value
+
       body = href.children.text
       button_txt = href.attributes["href"].value #this is just to slice correctly
       button_slc = button_txt.slice!(0)
+      stage = button_txt
       next_step = href.attributes["href"].value
-      description = tag.children[4].text.strip
-      new_stage = StoryStage.new
-      byebug
+      begin
+        description = tag.children.text.strip
+      rescue NoMethodError
+        byebug
+      end
+      new_stage = StoryStage.new(stage: stage, body: body, button: button_txt, nextStep: next_step, description: description, pic_id: 1)
+      new_stage.save
     end
   end
 end
+
+# div.each do |tag|
+#   tag.css('a[href]').each do |href|
+#     href.each do
+#       byebug
+#       stage = tag.children[2].attributes["id"].value
+#       body = href.children.text
+#       button_txt = href.attributes["href"].value #this is just to slice correctly
+#       button_slc = button_txt.slice!(0)
+#       next_step = href.attributes["href"].value
+#       description = tag.children[4].text.strip
+#       new_stage = StoryStage.new(stage: stage, body: body, button: button_txt, nextStep: next_step, description: description, pic_id: 1)
+#       new_stage.save
+#     end
+#   end
+# end
 
 # t.string :stage
 # t.string :body
