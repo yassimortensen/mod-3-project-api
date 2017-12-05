@@ -1,4 +1,4 @@
 class UserStory < ApplicationRecord
   belongs_to :user
-  belongs_to :storyStage
+  belongs_to :story_stage
 end

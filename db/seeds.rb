@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Pic.create(picUrl: 'www.blah.com')
+StoryStage.create(pic: Pic.last)
+User.create!
+UserStory.create(user: User.last, story_stage: StoryStage.last)

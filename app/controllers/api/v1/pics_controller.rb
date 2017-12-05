@@ -1,8 +1,8 @@
 class Api::V1::PicsController < ApplicationController
 
   def index
-    @pics = Pics.all
-    render json: @pics
+    @pics = Pic.all
+    render json: @pics, include: [:story_stages]
   end
 
 end
