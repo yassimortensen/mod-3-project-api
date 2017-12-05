@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 20171204210010) do
     t.string "button"
     t.integer "nextStep"
     t.string "description"
-    t.integer "picId"
+    t.integer "pic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "user_stories", force: :cascade do |t|
-    t.integer "userId"
-    t.integer "storyStageId"
+    t.integer "user_id"
+    t.integer "story_stage_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -6,7 +6,7 @@ class CreateStoryStages < ActiveRecord::Migration[5.1]
       t.string :button
       t.integer :nextStep
       t.string :description
-      t.integer :picId
+      t.integer :pic_id
 
       t.timestamps
     end
