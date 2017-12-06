@@ -36,7 +36,7 @@
 
 # byebug
 
-
+def pics()
   pics_yay = {
   "0":"http://78.media.tumblr.com/e5d6765ef04c7b826f997326f07cb5b1/tumblr_n22a7oay3c1tuzdqso1_540.jpg",
   "1":"http://78.media.tumblr.com/39fea54f34f95e2a0cf180050da11c3b/tumblr_n215h4HICw1tuzdqso1_540.jpg",
@@ -106,14 +106,8 @@
   "65":"http://78.media.tumblr.com/8ca73a42a5f8b2f03d3f72afda8bc932/tumblr_ov9aga1w5j1tuzdqso1_540.jpg",
   "66":"http://78.media.tumblr.com/d54ca3d5f68fc3097277b89d3fd44055/tumblr_ovm7ku7GBB1tuzdqso1_540.jpg"}
 
-
-
-
-def pics(pics_yay)
   pics_yay.values.each do |pic|
     new_pic = Pic.new(picUrl: pic)
     new_pic.save
   end
 end
-
-pics(pics_yay)
