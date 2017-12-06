@@ -34,14 +34,7 @@ div.each do |tag|
   end
 end
 
-<<<<<<< HEAD
-# Pic.create(picUrl: 'http://robertmball.com/wp-content/uploads/2017/05/1.jpg')
-# Pic.create(picUrl: 'http://78.media.tumblr.com/cff15390797a22064509e2ffeadb950a/tumblr_npubfyZl2o1tuzdqso1_540.jpg')
-# Pic.create(picUrl: 'https://78.media.tumblr.com/8a33a8c37f734b5e63d2caa484eb0d37/tumblr_ou6g5pd62r1qzykvyo1_500.jpg')
-=======
 
-
->>>>>>> 112e6d1d680dc1f8afdeceb371ba5fb49f6f35fb
 # div.each do |tag|
 #   tag.css('a[href]').each do |href|
 #     href.each do
