@@ -15,22 +15,26 @@ div = doc.css('div[style="padding-bottom:1200px;"]')
 div.each do |tag|
   tag.css('a[href]').each do |href|
     href.each do
-
       body = href.children.text
       button_txt = href.attributes["href"].value #this is just to slice correctly
       button_slc = button_txt.slice!(0)
-      stage = button_txt
       next_step = href.attributes["href"].value
       begin
-        description = tag.children.text.strip
+        stage = tag.css('a[id]')[0].attributes["id"].value
       rescue NoMethodError
         byebug
       end
+      description_remove = tag.children.text
+      description_array = description_remove.split(/[\n]+/)
+      description = description_array[1]
+      # byebug
       new_stage = StoryStage.new(stage: stage, body: body, button: button_txt, nextStep: next_step, description: description, pic_id: 1)
       new_stage.save
     end
   end
 end
+
+
 
 # div.each do |tag|
 #   tag.css('a[href]').each do |href|
@@ -47,26 +51,3 @@ end
 #     end
 #   end
 # end
-
-# t.string :stage
-# t.string :body
-# t.string :button
-# t.string :nextStep
-# t.string :description
-# t.integer :pic_id
-
-# next_step = href.attributes["href"].value
-# description = tag.children[4].text.strip
-# body = href.children.text
-# step = tag.children[2].attributes["id"].value
-
-
-# puts body
-# puts anchors
-# puts anchor_id
-# puts anchor_href
-
-
-
-# body_array = []
-# body_div.each{|text| body_array.push(text.text)}
