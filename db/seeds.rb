@@ -138,18 +138,12 @@ def story_pics
   end
 end
 
-# 2.times do
-#   byebug
-#   pics()
-# end
-#
-=======
 2.times do
 
   pics()
 end
 
->>>>>>> 0b3c077cc51eece491327a8ff6db3ed1e6ee3117
+
 story_stage()
 # story_pics()
 
