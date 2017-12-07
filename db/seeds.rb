@@ -24,9 +24,30 @@ def story_stage()
         description_remove = tag.children.text
         description_array = description_remove.split(/[\n]+/)
         description = description_array[1]
-        # byebug
-        new_stage = StoryStage.new(stage: stage, body: body, button: button_txt, nextStep: next_step, description: description, pic_id: 0)
-        new_stage.save
+        description.sub! 'and firm hand with a gravy pan', ''
+        description.sub! 'Hot Pie', '`${characterName}`'
+        description.sub! 'gravy man', '`${firstJob}`'
+        description.sub! 'But on the bright side, they really enjoy how you taste with the gravy you left simmering.', ''
+        description.sub! 'another batch of gravy for the evening dinner rush', '`${favFood}` for dinner'
+        description.sub! 'old gravy pan,', 'old pan,'
+        description.sub! 'without gravy,', 'without #{favFood}'
+        description.sub! 'teetering on the edge of gravy', 'teetering on the edge of #{favFood}'
+        description.sub! 'It enjoys the gravy so', 'It enjoys the #{favFood} so'
+        description.sub! 'good dollop of gravy.', 'good dollop of #{favFood}.'
+        body.gsub! 'gravy', '`${favFood}`'
+        body.sub! 'GRAVY', '`${favFood}`'
+        button_txt.sub! 'gravy', 'food'
+        next_step.sub! 'gravy', 'food'
+        button_txt.sub! 'Gravy', 'food'
+        next_step.sub! 'Gravy', 'food'
+        stage.sub! 'gravy', 'food'
+        stage.gsub! 'Gravy', 'food'
+        description.gsub! 'gravy', '`${favFood}`'
+        if stage != 'comments' && button_txt != 'comments'
+          # byebug
+          new_stage = StoryStage.new(stage: stage, body: body, button: button_txt, nextStep: next_step, description: description, pic_id: 0)
+          new_stage.save
+        end
       end
     end
   end
@@ -117,10 +138,27 @@ def story_pics
   end
 end
 
-2.times do
-  byebug
-  pics()
-end
-
+# 2.times do
+#   byebug
+#   pics()
+# end
+#
 story_stage()
-story_pics()
+# story_pics()
+
+
+# description.sub! 'gravy', '#{favFood}'
+# description.sub! 'without spilling a drop', 'with ease'
+# description.sub! 'pan of gravy', 'pan of #favFood'
+# description.sub! 'filled with love, gravy, and dragons.', 'filled with love, #{favFood}, and dragons'
+# description.sub! 'cooking of gravy', 'cooking of #{favFood}'
+# description.sub! 'perfecting your gravy', 'perfecting your #{favFood}'
+# description.sub! 'enjoy the gravy.', 'enjoy the #{favFood}'
+# description.sub! 'unimpressed with your gravy,', 'unimpressed with your #{favFood},'
+# description.sub! 'pies and gravy,', 'pies and #{favFood},'
+# description.sub! 'proper materials to make gravy,', 'proper materials to make #{favFood},'
+# description.sub! 'signature gravy and wolf pies.', 'signature #{favFood} and wolf pies.'
+# description.sub! 'joy of gravy,', 'joy of #favFood,'
+# description.sub! 'gravy and wolf pie,', '#{favFood} and wolf pie,'
+# description.sub! 'You realize that you are still carrying your pan of gravy.', 'You realize that you are still carrying your pan of #{favFood}.'
+# description.sub! 'to do with the pan of gravy that youre still carrying.', 'to do with the pan of #{favFood} that youre still carrying.'
