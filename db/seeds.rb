@@ -111,3 +111,5 @@ def pics()
     new_pic.save
   end
 end
+
+pics()
