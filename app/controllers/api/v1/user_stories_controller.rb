@@ -17,7 +17,7 @@ class Api::V1::UserStoriesController < ApplicationController
   private
 
   def userstory_params
-    params.permit(:userId, :storyStageId)
+    params.permit(:user_id, :story_stage_id)
   end
 
 end
