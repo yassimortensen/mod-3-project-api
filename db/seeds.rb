@@ -118,7 +118,7 @@ def story_pics
 end
 
 2.times do
-  byebug
+
   pics()
 end
 
