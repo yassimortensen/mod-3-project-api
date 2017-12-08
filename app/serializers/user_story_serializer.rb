@@ -2,7 +2,12 @@ class UserStorySerializer < ActiveModel::Serializer
   attributes :id, :user, :story_stage
 
   def user
-    {user_id: object.user.id}
+    {
+      user_id: object.user.id,
+      characterName: object.user.characterName,
+      favFood: object.user.favFood,
+      firstJob: object.user.firstJob
+    }
   end
 
   def story_stage
