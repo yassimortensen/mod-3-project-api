@@ -145,7 +145,7 @@ end
 
 
 story_stage()
-# story_pics()
+story_pics()
 
 
 # description.sub! 'gravy', '#{favFood}'
